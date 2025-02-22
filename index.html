@@ -62,5 +62,28 @@ time_is_widget.init({Elite_Dangerous_Time_za00:{}});
             </tr>
         </table>
     </center>
+        <script>
+        function checkTime(i) {
+          if (i < 10) {
+            i = "0" + i;
+          }
+          return i;
+        }
         
+        function startTime() {
+          var today = new Date();
+          var d = today.getDate();
+          var m = today.getMonth() + 1;
+          var y = today.getUTCFullYear() + 1286;
+          // add a zero in front of numbers<10
+          // m = checkTime(m);
+          // s = checkTime(s);
+          document.getElementById('EDDate').innerHTML = d + "/" + m + "/" + y;
+          // t = setTimeout(function() {
+          //   startTime()
+          // }, 500);
+        }
+        startTime();
+
+        </script>
 </body></html>
